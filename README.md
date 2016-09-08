@@ -2,6 +2,17 @@
 
 This web server remote controls Spotify Connect devices via HTTP requests.
 
+## Build/Run
+
+Use the following instructions to clone the repo, build the server and run it.
+
+```bash
+1. git clone <repo url>
+2. cd <folder>
+3. cargo build --release
+4. target/release/spotifyd_http --cache CACHEDIR --name NAME
+```
+
 ## Methods
 
 These are the currently supported methods:
