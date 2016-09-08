@@ -2,15 +2,34 @@
 
 This web server remote controls Spotify Connect devices via HTTP requests.
 
-## Build/Run
+## Building
+Rust 1.7.0 or later is required to build librespot.
 
-Use the following instructions to clone the repo, build the server and run it.
+It also requires a C and C++ toolchain, with libprotoc and portaudio.
 
-```bash
-1. git clone <repo url>
-2. cd <folder>
-3. cargo build --release
-4. target/release/spotifyd_http --cache CACHEDIR --name NAME
+On debian / ubuntu, the following command will install these dependencies :
+```shell
+sudo apt-get install build-essential portaudio19-dev libprotoc-dev
+```
+
+On Fedora systems, the following command will install these dependencies :
+```shell
+sudo dnf install portaudio-devel protobuf-devel make gcc gcc-c++
+```
+
+On OS X, using homebrew :
+```shell
+brew install portaudio protobuf
+```
+
+Once you've cloned this repository you can build *spotifyd-http* using `cargo`.
+```shell
+cargo build --release
+```
+
+## Usage
+```shell
+target/release/spotifyd_http --cache CACHEDIR --name NAME
 ```
 
 ## Methods
